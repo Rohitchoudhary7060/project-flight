@@ -1,5 +1,10 @@
 pipeline {
     agent any
+     environment {
+        JAVA_HOME = '/usr/lib/jvm/java-21-openjdk-amd64'
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
+    }
+
     
     stages {
         stage('PULL') {
@@ -12,7 +17,9 @@ pipeline {
             steps {
                 sh '''
                     cd FlightReservationApplication
-                    mvn clean package
+                     java -version
+                     javac -version
+                     mvn clean package
                 '''
             }
         }
