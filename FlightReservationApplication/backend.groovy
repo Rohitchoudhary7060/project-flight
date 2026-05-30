@@ -38,7 +38,7 @@ pipeline {
             }
         }
         stage('DOCKER BUILD') {
-            steps { withDockerRegistry(credentialsId:'docker') {
+            steps { withDockerRegistry([credentialsId:'docker']) {
 
                     sh '''
                         cd FlightReservationApplication
