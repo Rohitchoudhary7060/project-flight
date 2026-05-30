@@ -1,9 +1,5 @@
 pipeline {
     agent any
-     tools {
-         jdk 'jdk17'
-         maven 'maven'
-     }
     
     stages {
         stage('PULL') {
@@ -16,7 +12,6 @@ pipeline {
             steps {
                 sh '''
                     cd FlightReservationApplication
-                     java -version
                      mvn clean package
                 '''
             }
