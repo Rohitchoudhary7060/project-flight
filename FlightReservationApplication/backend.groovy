@@ -24,8 +24,8 @@ pipeline {
                     sh '''
                         cd FlightReservationApplication
                         mvn sonar:sonar\
-                        -Dsonar.projectKey='flight-reservation'\ 
-                        -Dsonar.projectName='flight-reservation'\
+                        -Dsonar.projectKey=flight-reservation\ 
+                        -Dsonar.projectName=flight-reservation\
                     '''
                 }
             }
