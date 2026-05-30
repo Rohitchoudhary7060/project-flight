@@ -38,17 +38,17 @@ pipeline {
             }
         }
         stage('DOCKER BUILD') {
-            steps { withDockerRegistry([credentialsId:'docker',url: 'https://index.docker.io/v1/']) {
-
+            steps { 
+                withDockerRegistry([credentialsId:'docker',url: 'https://index.docker.io/v1/']) {
                     sh '''
                         cd FlightReservationApplication
                         docker build -t rohit7060/flight-reservation:latest .
                         docker push rohit7060/flight-reservation:latest
                         docker rmi rohit7060/flight-reservation:latest
                         '''
-            }
-
                 }
+
             }
         }
-        }
+     }
+    }
